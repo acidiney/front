@@ -14,9 +14,8 @@
 export default {
   name: 'AddChild',
   methods: {
-      goToPreviusComponent: function () {
-          this.$emit
-      }
+    goToPreviusComponent: function () {
+    }
   },
   computed: {
     user: function () {

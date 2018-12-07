@@ -10,13 +10,23 @@
         Nome da Criança
         <input type="text" placeholder="Nome da criança">
       </label>
-      <div class="grid-x grid-margin-x">
+      <div v-if="user.gender === 'M'" class="grid-x grid-margin-x">
         <label class="cell small-6" for>
           Nome do Pai:
           <input type="text" placeholder="Nome do pai" v-model="user.name" disabled>
         </label>
         <label class="cell small-6" for>
           Nome da Mãe:
+          <input type="text" placeholder="Nome da mãe">
+        </label>
+      </div>
+      <div v-else class="grid-x grid-margin-x">
+        <label class="cell small-6" for>
+          Nome da Mãe:
+          <input type="text" placeholder="Nome do pai" v-model="user.name" disabled>
+        </label>
+        <label class="cell small-6" for>
+          Nome do Pai:
           <input type="text" placeholder="Nome da mãe">
         </label>
       </div>

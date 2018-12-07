@@ -5,7 +5,8 @@
         <div class="cards grid-x grid-padding-x ">
           <app-card v-for="(card, index) of cards"
             v-bind:key="index"
-            v-bind:data="card"/>
+            v-bind:data="card">
+            </app-card>
         </div>
       </div>
       <div class="row">
@@ -23,16 +24,19 @@
                 </tr>
               </thead>
               <tbody>
-                <template v-if="user.vaccines.length != 0">
-                  <tr v-for="item of user.vaccines" v-bind:key="item.id">
-                      <td> {{ item.id }}</td>
-                      <td>{{ item.date }}</td>
-                      <td>{{ item.vacine }}</td>
-                      <td>{{ item.center }}</td>
-                      <td>{{ item.doctor }}</td>
-                  </tr>
-                </template>
-                <tr v-else>
+                  <div  v-if="user.vaccines.length != 0">
+                    <tr v-for="item of user.vaccines"
+                        v-bind:key="item.id"
+                        >
+
+                        <td> {{ item.id }}</td>
+                        <td>{{ item.date }}</td>
+                        <td>{{ item.vaccine }}</td>
+                        <td>{{ item.center }}</td>
+                        <td>{{ item.doctor }}</td>
+                    </tr>
+                  </div>
+                 <tr v-else>
                     <td colspan="5"> Sem nenhuma vacina ...</td>
                 </tr>
               </tbody>
